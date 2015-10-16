@@ -11,6 +11,11 @@ function parse_git_dirty() {
 function parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)$(parse_git_dirty)/"
 }
+
+function current_dir() {
+  pwd
+}
+
 c_1="\[\e[0m\]"
 c0="\[\e[30m\]"
 c1="\[\e[31m\033[1m\]"
@@ -20,4 +25,4 @@ c4="\[\e[34m\]"
 c5="\[\e[35m\]"
 c6="\[\e[36m\]"
 c7="\[\e[37m\]"
-PS1="$c2\W $c3(\$(~/.rvm/bin/rvm-prompt v g)) $c1\$(parse_git_branch) $c_1$ "
+PS1="$c1 \u: $c2\w $c3(\$(~/.rvm/bin/rvm-prompt v g)) $c1\$(parse_git_branch) \n$c_1~ "
