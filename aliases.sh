@@ -1,5 +1,5 @@
 export PATH=/usr/local/sbin:$PATH
-export RAILS_ENV=production
+export RAILS_ENV=staging
 export GREP_OPTIONS='--color=auto' 
 export GREP_COLOR='01;04;32'
 
