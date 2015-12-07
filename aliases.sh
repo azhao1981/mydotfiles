@@ -7,6 +7,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
 export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
 
+ssh-add ~/.ssh/id_rsa
+
 # export GOROOT=/usr/local/Cellar/go/1.2
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
