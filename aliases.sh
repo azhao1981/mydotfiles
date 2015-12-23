@@ -7,7 +7,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
 export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
 
-ssh-add ~/.ssh/id_rsa
+
 
 # export GOROOT=/usr/local/Cellar/go/1.2
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -33,6 +33,7 @@ alias sure="sudo !!"
 alias linc='ssh -t weizhao@lish-tokyo.linode.com main'
 alias sock5='ssh lint -N -f &'
 alias sock6='ssh bjt -N -f &'
+alias ssha='ssh-add ~/.ssh/id_rsa'
 
 # Manage dotfiles
 alias er="source ~/.bash_profile"   # reload bash profile
