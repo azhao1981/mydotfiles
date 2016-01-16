@@ -18,10 +18,10 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"  # you need -- before you define -
 alias ll="ls -lh"
+alias sshtunnel="ssh -p 60022 weizhao@101.200.204.62"
 
 # unicore
-# alias ustart="nohup bundle exec unicorn_rails -c config/unicorn.conf.rb > ./log/unicorn.log &"
-# alias ustop="kill -9 `cat tmp/pids/unicorn.pid` ; rm -f tmp/pids/unicorn.pid"
+alias ureload='kill -USR2 `cat tmp/pids/unicorn.pid`'
 # goc go in current dir
 alias go="GOPATH=`pwd` go"
 
