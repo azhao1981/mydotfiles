@@ -7,6 +7,11 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
 export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
 
+#es
+alias es=elasticsearch
+
+elasticsearch() { /usr/local/Cellar/elasticsearch/1.5.1/bin/service/elasticsearch $1
+}
 
 
 # export GOROOT=/usr/local/Cellar/go/1.2
@@ -25,6 +30,9 @@ alias ureload='kill -USR2 `cat tmp/pids/unicorn.pid`'
 # goc go in current dir
 alias go="GOPATH=`pwd` go"
 
+#udesk
+alias proj="cd ~/udesk/udesk_proj"
+alias udeskim="cd ~/udesk/udesk_im"
 # sudo
 # redo prew command use sudo 
 alias sure="sudo !!"
