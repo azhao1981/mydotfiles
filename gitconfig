@@ -1,0 +1,27 @@
+[user]
+	name = azhao1981
+	email = azhao.1981@gmail.com
+[core]
+	excludesfile = /Users/azhao/.gitignore_global
+	autocrlf = 
+	quotepath = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+        cl = clone
+	ff = merge --ff-only origin
+	di = diff -w -M
+        reh = reset --hard
+[color]
+	ui = true
+[push]
+	default = matching
