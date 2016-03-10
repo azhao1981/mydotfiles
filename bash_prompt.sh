@@ -15,6 +15,9 @@ function parse_git_branch() {
 function current_dir() {
   pwd
 }
+function ruby_version() {
+  ~/.rvm/bin/rvm-prompt v g 2> /dev/null
+}
 
 c_1="\[\e[0m\]"
 c0="\[\e[30m\]"
@@ -25,4 +28,4 @@ c4="\[\e[34m\]"
 c5="\[\e[35m\]"
 c6="\[\e[36m\]"
 c7="\[\e[37m\]"
-PS1="$c1 \u: $c2\w $c3(\$(~/.rvm/bin/rvm-prompt v g)) $c1\$(parse_git_branch) \n$c_1~ "
+PS1="$c1 \u: $c2\w $c3(\$(ruby_version)) $c1\$(parse_git_branch) \n$c_1~ "
