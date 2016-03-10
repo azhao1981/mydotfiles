@@ -3,3 +3,6 @@ source ~/dotfiles/functions.sh
 source ~/dotfiles/aliases.sh
 source ~/dotfiles/bash_prompt.sh
 source ~/dotfiles/udesk.sh
+source /Users/azhao/udesk/suitup/script/suitup_bash.sh
+suitup-load /Users/azhao/udesk/udesk_proj
+suitup-load /Users/azhao/udesk/udesk_im

@@ -6,13 +6,15 @@ export GOPATH=/srv/gopath
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
 #es
 alias es=elasticsearch
 
-elasticsearch() { /usr/local/Cellar/elasticsearch/1.5.1/bin/service/elasticsearch $1
+elasticsearch() { /usr/local/opt/elasticsearch/bin/elasticsearch $@
 }
 
+#alias dockerclean="docker rm $(docker ps -aq)"
 
 # export GOROOT=/usr/local/Cellar/go/1.2
 # Easier navigation: .., ..., ...., ....., ~ and -
