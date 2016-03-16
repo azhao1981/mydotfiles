@@ -1,6 +1,6 @@
-export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/sbin:/root/bin:/srv/ejabberd-16.01/bin:$PATH
 export RAILS_ENV=production
-export GREP_OPTIONS='--color=auto' 
+export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='01;04;32'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
@@ -11,9 +11,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"  # you need -- before you define -
 alias ll="ls -lh"
-
+alias e="godit"
 # sudo
-# redo prew command use sudo 
+# redo prew command use sudo
 alias sure="sudo !!"
 
 #rm
@@ -46,7 +46,7 @@ alias gps="git push"
 alias gpl="git pull"
 alias giturl="git remote show origin"
 alias gitl="git config --get remote.origin.url"
-# I allway make a mistake to type this 
+# I allway make a mistake to type this
 alias gti="git "
 
 # Shortcuts
@@ -55,7 +55,7 @@ alias h="history"
 alias j="jobs"
 alias v="vim"
 
-# current work 
+# current work
 alias proj="cd /srv/www/udesk_proj/current"
 alias udeskim="cd /srv/www/udesk_im/current"
 alias be="bundle exec "
