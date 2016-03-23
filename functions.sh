@@ -16,6 +16,12 @@ function calc() {
   printf "\n"
 }
 
+kp () {
+  ps aux | grep $1 | grep -v grep
+  echo "Kill them all!!!!!!"
+  kill -9 $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
+}
+
 # Create a new directory and enter it
 function mkd() {
   mkdir -p "$@" && cd "$@"
