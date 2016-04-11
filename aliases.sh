@@ -8,6 +8,20 @@ export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
+
+# node
+alias npm=cnpm
+
+
+# PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
+# alias lastp='echo "$LAST"'
+alias icp=pbcopy
+alias ipp=pbpaste
+# /usr/local/etc/bash_completion.d
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 #es
 alias es=elasticsearch
 
@@ -172,7 +186,7 @@ alias sshc='subl ~/.ssh/config'
 
 # admin command
 alias ng="netstat -na| grep "
-alias psg="ps aux | grep "
+alias psg="ps aux | grep -v grep | grep "
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

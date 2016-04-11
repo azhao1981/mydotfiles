@@ -1,3 +1,32 @@
+
+docker_env() {
+  bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
+}
+es_start () {
+  sudo elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml -XX:-UseSuperWord -d
+}
+
+kp () {
+  ps aux | grep $1 | grep -v grep
+  echo "Kill them all!!!!!!"
+  kill -9 $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
+}
+
+rtest(){
+  OPTS=""
+  if [ $# = 2 ]; then
+    OPTS="TESTOPTS=\"--name=test_$2\""
+  fi
+  echo "./bin/rake test $1 $OPTS"
+  ./bin/rake test $1 $OPTS
+}
+
+rrun(){
+  echo "./bin/rails runner $@"
+  ./bin/rails runner $@
+}
+
+
 code () {
     if [[ $# = 0 ]]
     then
@@ -99,6 +128,9 @@ if [ $? -eq 0 ]; then
   function rco() {
     git pull
     git rebase
+  }
+  function gitff() {
+    git merge --ff-only origin/`git name-rev --name-only HEAD`
   }
 fi
 

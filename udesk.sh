@@ -1,7 +1,18 @@
 udesk_pid_file=tmp/pids/server.pid
-
+function prolog {
+  ssh $1 'tail -f /srv/www/udesk_proj/current/log/staging.log'
+}
+function udeskimlog {
+  ssh $1 'tail -f /srv/www/udesk_im/current/log/staging.log'
+}
+function prologp {
+  ssh $1 'tail -f /srv/www/udesk_proj/current/log/production.log'
+}
+function udeskimlogp {
+  ssh $1 'tail -f /srv/www/udesk_im/current/log/production.log'
+}
 function suitup-cd-udesk {
-  cd ~/Documents/udesk_proj
+  cd ~/udesk/udesk_proj
 }
 
 function suitup-udesk-run {

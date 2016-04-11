@@ -12,15 +12,15 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
-	st = status
+	st = status -s
 	ci = commit
 	br = branch
 	co = checkout
 	df = diff
-        cl = clone
+  cl = clone
 	ff = merge --ff-only origin
 	di = diff -w -M
-        reh = reset --hard
+  reh = reset --hard
 [color]
 	ui = true
 [push]
