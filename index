@@ -1,4 +1,5 @@
-CURRENTDIR=`pwd`
-source ~/dotfiles/functions.sh
-source ~/dotfiles/aliases.sh
-source ~/dotfiles/bash_prompt.sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/functions.sh
+source $DIR/aliases.sh
+source $DIR/bash_prompt.sh
+ln -nfs $DIR/.gitconfig ~/.gitconfig
