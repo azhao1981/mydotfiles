@@ -10,4 +10,4 @@ source $WORK_DIR/suitup/script/suitup_bash.sh
 suitup-load $WORK_DIR/udesk_proj
 suitup-load $WORK_DIR/udesk_im
 
-
+ln -nfs $DIR/.gitconfig ~/.gitconfig

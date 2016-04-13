@@ -30,7 +30,7 @@ elasticsearch() { /usr/local/opt/elasticsearch/bin/elasticsearch $@
 
 #alias dockerclean="docker rm $(docker ps -aq)"
 
-# export GOROOT=/usr/local/Cellar/go/1.2
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -50,10 +50,10 @@ alias go="GOPATH=`pwd` go"
 alias proj="cd ~/udesk/udesk_proj"
 alias udeskim="cd ~/udesk/udesk_im"
 # sudo
-# redo prew command use sudo 
+# redo prew command use sudo
 alias sure="sudo !!"
 
-# linode 
+# linode
 alias linc='ssh -t weizhao@lish-tokyo.linode.com main'
 alias sock5='ssh lint -N -f &'
 alias sock6='ssh bjt -N -f &'
@@ -64,7 +64,7 @@ alias er="source ~/.bash_profile"   # reload bash profile
 alias eedit="mate ~/dotfiles && mate ~/dotfiles/aliases.sh"
 
 # source tree
-alias str='open -a SourceTree ' 
+alias str='open -a SourceTree '
 
 # sublime tools
 alias sp="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
@@ -81,8 +81,6 @@ alias sup="svn up "
 alias sst="svn st "
 alias sci="svn ci -m "
 alias sco="svn co "
-alias svnd="svn co "
-alias sadde="svn propset svn:executable on "
 alias sic="svn propset svn:ignore \"*\" ."
 alias si="svn propset svn:ignore "
 alias se="svn propedit svn:ignore ."
@@ -91,27 +89,8 @@ alias sinfo="svn info"
 alias sug="svn upgrade"
 alias surl="svn info | grep URL | awk {'print $2'}"
 alias svng="svn log --stop-on-copy "
-alias slog="svng -l 20|svn-slog"
 # do not work
 alias svnaddall="svn st | awk '{if ( $1 == \"?\") { print $2}}' | xargs svn add"
-
-# redis
-alias redisstart='sudo launchctl start io.redis.redis-server'
-alias redisstop='sudo launchctl stop io.redis.redis-server'
-
-# python
-alias py='python'
-
-# rvm
-alias r21="rvm use 2.1"
-alias r2="rvm use 2.0.0"
-alias r19="rvm 1.9.3"
-alias ree="rvm ree"
-
-# rails
-alias rec="rake pry:run"
-alias epry="bundle exec pry"
-alias migrate="bundle exec rake db:migrate"
 
 # git
 alias gc="git clone "
@@ -124,65 +103,19 @@ alias gps="git push"
 alias gpl="git pull"
 alias giturl="git remote show origin"
 alias gitl="git config --get remote.origin.url"
-# I allway make a mistake to type this 
+# I allway make a mistake to type this
 alias gti="git "
-alias gst='git status'
-
-
-# sysctl
-alias symsl="sysctl net.inet.tcp.msl"
-alias symslt="sudo sysctl -w net.inet.tcp.msl=1000"  #net.inet.tcp.msl: 15000 -> 1000
-alias symslr="sudo sysctl -w net.inet.tcp.msl=15000"  #net.inet.tcp.msl: 1000 -> 15000
-
-# rails 
-alias mg="rake db:migration"
-alias rt="touch tmp/restart.txt"
-alias tl="tail -f log/development.log"
-alias tlp="tail -f log/production.log"
 
 # Shortcuts
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias dw="cd ~/work"
-alias work="cd ~/work"
-alias dev="cd ~/dev"
-alias ror="cd /srv/rorapps"
-alias p="cd ~/Projects"
-alias odown="open ~/Downloads"
 alias g="git"
 alias h="history"
-alias pg='ps -ef| grep '
-# alias j="jobs"
+alias j="jobs"
 alias v="vim"
-alias m="mate ."
-alias s="subl ."
-alias o="open"
-alias oo="open ."
-alias movie="cd /Users/azhao/work/movie"
-alias mbj="cd /Users/azhao/work/movie/bja2"
-alias mbjv="cd /Users/azhao/work/movie/bjv1"
-alias mtrunk="cd /Users/azhao/work/movie/trunk"
-alias tdc="cd /Users/azhao/work/movie/bja2/ticket_data_center"
-alias ttdc="cd /Users/azhao/work/movie/trunk/ticket_data_center"
-alias tailf="tail -f "
-# ruby 
-alias me='magic_encoding'
 
-# current work 
-alias toc="cd /srv/rorapps/toc"
-alias fgcc="cd /srv/rorapps/fgcc"
+# current work
+alias proj="cd /srv/www/udesk_proj/current"
+alias udeskim="cd /srv/www/udesk_im/current"
 alias be="bundle exec "
-alias ot="open http://toc.dev"
-alias rmovie="cd /srv/rorapps/rmovie"
-alias or="open http://rmovie.dev"
-# open glass on localhost
-alias ogjava="open -a firefox https://localhost:4850"
-alias chfs="cd /Users/azhao/work/huafei/statistic"
-alias hf="cd /Users/azhao/work/huafei"
-alias r7d="cd /srv/go/src/github.com/azhao1981/route7"
-# ssh config
-alias sshc='subl ~/.ssh/config'
-
 
 # admin command
 alias ng="netstat -na| grep "
@@ -206,7 +139,7 @@ alias lsd='ls -lF ${colorflag} | grep "^d"'
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mov=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
