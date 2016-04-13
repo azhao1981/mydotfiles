@@ -12,15 +12,26 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
-	st = status -s
-	ci = commit
-	br = branch
-	co = checkout
-	df = diff
-  cl = clone
-	ff = merge --ff-only origin
-	di = diff -w -M
-  reh = reset --hard
+	st = status -s 
+	ci = commit -v 
+  cia = commit -v -a -m 
+	br = branch 
+	df = diff 
+  cl = clone 
+	ff = merge --ff-only origin/`git name-rev --name-only HEAD`
+	di = diff -w -M 
+  reh = reset --hard 
+  co = checkout -b 
+  cp = cherry-pick 
+  l = log 
+  ll = log -p 
+  lod = log --oneline --decorate 
+  lgraph = log --oneline --decorate --graph 
+  pullit = pull --rebase 
+  ads = submodule add 
+  rem = remote add origin 
+  headless = !sh -c 'git symbolic-ref HEAD refs/heads/$0 && rm .git/index && git clean -fdx'
+  unstash = stash branch
 [color]
 	ui = true
 [push]
