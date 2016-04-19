@@ -19,7 +19,7 @@ module Rmate
     attr_accessor :host, :port, :unixsocket, :wait, :force, :verbose, :lines, :names, :types
 
     def initialize
-      @host, @port, @unixsocket = 'localhost', 52698, '~/.rmate.socket'
+      @host, @port, @unixsocket = 'localhost', 53698, '~/.rmate.socket'
 
       @wait    = false
       @force   = false
