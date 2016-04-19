@@ -1,5 +1,5 @@
 export PATH=/usr/local/sbin:/root/bin:/srv/ejabberd-16.01/bin:$PATH
-export RAILS_ENV=production
+export PATH=~/dotfiles/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='01;04;32'
 export EDITOR=vim
