@@ -1,7 +1,8 @@
-export PATH=/usr/local/sbin:/root/bin:/srv/ejabberd-16.02/bin:$PATH
+export PATH=/usr/local/sbin:/root/bin:/srv/ejabberd-16.01/bin:$PATH
 export RAILS_ENV=production
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='01;04;32'
+export EDITOR=vim
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
