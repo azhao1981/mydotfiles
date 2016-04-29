@@ -63,7 +63,7 @@ alias be="bundle exec "
 
 # admin command
 alias ng="netstat -nap| grep "
-alias psg="ps aux | grep "
+alias psg="ps aux | grep -v grep | grep "
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
