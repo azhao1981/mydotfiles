@@ -1,9 +1,16 @@
+deploy() {
+  bundle exec cap $1 deploy
+}
 
 docker_env() {
   bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
 }
 es_start () {
-  sudo elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml -XX:-UseSuperWord -d
+  sudo elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml  -XX:-UseSuperWord -Xmx50m -Xms10m -d
+}
+
+llp () {
+  `pwd`/
 }
 
 kp () {
@@ -11,6 +18,7 @@ kp () {
   echo "Kill them all!!!!!!"
   kill -9 $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
 }
+
 
 rtest(){
   OPTS=""
@@ -26,7 +34,12 @@ rrun(){
   ./bin/rails runner $@
 }
 
-
+py2(){
+  source ~/.py2/bin/activate
+}
+py3(){
+  source ~/.py3/bin/activate
+}
 code () {
     if [[ $# = 0 ]]
     then

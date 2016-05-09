@@ -8,9 +8,10 @@ export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-
 # node
 alias npm=cnpm
+alias note="atom ~/dev/my-notes"
+alias atomw="atom ~/udesk/work/ ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/dev/my-notes/ ~/udesk/ejabberd"
 
 
 # PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
@@ -49,6 +50,7 @@ alias go="GOPATH=`pwd` go"
 #udesk
 alias proj="cd ~/udesk/udesk_proj"
 alias udeskim="cd ~/udesk/udesk_im"
+alias ejabberd="cd ~/udesk/ejabberd"
 # sudo
 # redo prew command use sudo 
 alias sure="sudo !!"
@@ -144,7 +146,8 @@ alias tlp="tail -f log/production.log"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dw="cd ~/work"
-alias work="cd ~/work"
+alias work="cd ~/udesk/work"
+alias dn="cd ~/dev/my-notes"
 alias dev="cd ~/dev"
 alias ror="cd /srv/rorapps"
 alias p="cd ~/Projects"

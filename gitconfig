@@ -21,7 +21,7 @@
 	ff = merge --ff-only origin/`git name-rev --name-only HEAD`
 	di = diff -w -M 
   reh = reset --hard 
-  co = checkout -b 
+  co = checkout 
   cp = cherry-pick 
   l = log 
   ll = log -p 
@@ -38,3 +38,7 @@
 	default = matching
 [credential]
 	helper = osxkeychain
+[http]
+	proxy = socks5://127.0.0.1:1080
+[https]
+	proxy = socks5://127.0.0.1:1080

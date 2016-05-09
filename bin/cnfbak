@@ -1,0 +1,6 @@
+#!/bin/bash
+((!$#)) && echo 请指定文件, command ignored! && exit 1
+file=$1
+cp $file $file.cnfbak
+
+egrep -v '^$' $file | egrep -v '^#' | egrep -v '##' 
