@@ -7,7 +7,7 @@ DEPLOY_TARGET2=test_udeskmonkey
 checkout() {
     git checkout $1 || (git checkout -b $1 && git push -u origin $1)
 }
-checkout('testmonkey')
+checkout('testmonkey2')
 #
 # cd ~/udesk/udesk_im
 # if [[ "$1" = 'init' ]]; then
