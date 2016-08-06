@@ -1,0 +1,17 @@
+#!/bin/bash
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+
+((!$#)) && echo 请输入rebase的分支! command ignored! && exit 1
+current=$(parse_git_branch)
+rebase=$1
+echo "rebase $current to origin/$rebase"
+# exit 0
+set -x \
+  && git fetch --all \
+  && git checkout develop && git reset --hard origin/develop \
+  && git checkout master && git reset --hard origin/master \
+  && git checkout $current && git rebase origin/$rebase \
+  && git push -f -u origin $current
+

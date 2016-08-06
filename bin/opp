@@ -1,0 +1,10 @@
+#!/bin/bash
+
+((!$#)) && echo 指定文件 feature_xxx , command ignored! && exit 1
+
+cd ~/udesk/udesk_proj
+
+FILE=`grep app config/deploy/$1 | awk '{print $3}' | sed -e 's/%w{//g' | sed -e 's/}//g' | awk '{print "config/property/"$1".property.yml"}'`
+
+echo $FILE
+mate $FILE

@@ -1,0 +1,5 @@
+#!/bin/bash
+atom ~/udesk/work
+atom ~/udesk/udesk_proj
+atom ~/udesk/udesk_im
+atom ~/dev/my-notes

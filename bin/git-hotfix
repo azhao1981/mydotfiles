@@ -1,0 +1,11 @@
+#!/bin/bash
+
+((!$#)) && echo 请指定开始的新任务分支 feature_xxx , command ignored! && exit 1
+
+
+
+git checkout master 
+
+git checkout -b $1
+
+git push -u origin $1

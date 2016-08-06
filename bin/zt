@@ -1,0 +1,4 @@
+#!/bin/bash
+# zeus test test/controllers/spa1/im_logs_controller_test.rb #-n test_agent_logs
+# zeus test test/controllers/spa1/im_dispatch_controller_test.rb
+zeus test test/controllers/spa1/im_logs_controller_test.rb -n test_auto_message_wechat
