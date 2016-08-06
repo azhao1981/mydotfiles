@@ -32,10 +32,12 @@
   rem = remote add origin 
   headless = !sh -c 'git symbolic-ref HEAD refs/heads/$0 && rm .git/index && git clean -fdx'
   unstash = stash branch
+  untrack = update-index --assume-unchanged 
+  retrack = update-index --no-assume-unchanged 
 [color]
 	ui = true
 [push]
-	default = matching
+	default = current
 [credential]
 	helper = osxkeychain
 [http]

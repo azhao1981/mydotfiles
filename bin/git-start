@@ -1,7 +1,19 @@
 #!/bin/bash
 
-((!$#)) && echo 请指定开始的新任务, command ignored! && exit 1
+((!$#)) && echo 请指定开始的新任务分支 feature_xxx , command ignored! && exit 1
+
+cd ~/udesk/udesk_im
+
+git checkout develop
 
 git checkout -b $1
 
-git push -u  origin $1
+git push -u origin $1
+
+cd ~/udesk/udesk_proj
+
+git checkout develop
+
+git checkout -b $1
+
+git push -u origin $1

@@ -1,7 +1,7 @@
 # export GOROOT=/srv/go
 export GOROOT=/usr/local/go
 export PATH=$GOROOT/bin:~/dotfiles/bin:/usr/local/sbin:$PATH
-export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=/usr/local/share/npm/bin:/usr/local/Cellar/node/6.2.0/bin:$PATH
 export GOPATH=/srv/gopath
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 export M2_HOME=/srv/maven
@@ -11,8 +11,8 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 # node
 alias npm=cnpm
 alias note="atom ~/dev/my-notes"
-alias atomw="atom ~/udesk/work/ ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/dev/my-notes/ ~/udesk/ejabberd"
-
+alias atomw="atom ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/udesk/work/ ~/dev/my-notes/ ~/udesk/udesk_ejabberd"
+alias atomd="atom ~/~/dev/forjobs/forjobs ~/udesk/work ~/dev/my-notes"
 
 # PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
 # alias lastp='echo "$LAST"'
@@ -157,7 +157,7 @@ alias h="history"
 alias pg='ps -ef| grep '
 # alias j="jobs"
 alias v="vim"
-alias m="mate ."
+alias ma="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."

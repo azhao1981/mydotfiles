@@ -1,69 +1,49 @@
 #!/bin/bash
+# 自己的分支
 MY_BRANCH=feature_im_sdk_push
-DEPLOY_BRANCH=qa_feature_im_sdk_push_with_repository_richtext
-MERGE_BRANCHS="master feature/repository_richtext"
-DEPLOY_TARGET=test_udmonkey
-DEPLOY_TARGET2=test_udeskmonkey
+# 临时部署分支,最后可以用 git push origin :xxxx 删掉
+DEPLOY_BRANCH=qa_feature_im_sdk_push_with_hotfix_newsmessage
+# 包含的分支
+MERGE_BRANCHS="develop hotfix_group_dispatch_city_performent faqrobot_weixin_newsmessage"
+# 两个环境的不同部署名称
+DEPLOY_TARGET=test_udtry
+DEPLOY_TARGET2=test_tryudesk
+BASE_DIR=~/udesk
+
 checkout() {
     git checkout $1 || (git checkout -b $1 && git push -u origin $1)
 }
 
-
-cd ~/udesk/udesk_im
-if [[ "$1" = 'init' ]]; then
+cd $BASE_DIR/udesk_im
     set -x \
-    && git checkout -b $MY_BRANCH \
-    && git checkout -b $DEPLOY_BRANCH \
+    && checkout $MY_BRANCH \
+    && checkout $DEPLOY_BRANCH \
+    && git fetch \
     && for branch in $MERGE_BRANCHS ; do
         echo "$DEPLOY_BRANCH merge $branch"
-        git checkout -b $branch
-        git checkout -b $DEPLOY_BRANCH
-        git merge $branch
+        checkout $DEPLOY_BRANCH
+        git merge origin/$branch
     done \
-    && git push -u origin $DEPLOY_BRANCH  \
-    && git checkout -b $MY_BRANCH
-    exit 0
-else
-    set -x \
-    && for branch in $MERGE_BRANCHS ; do
-        echo "$DEPLOY_BRANCH merge $branch"
-        git checkout -b $branch
-        git checkout -b $DEPLOY_BRANCH
-        git merge $branch
-    done \
-    && git checkout -b $DEPLOY_BRANCH \
+    && checkout $DEPLOY_BRANCH \
     && git merge $MY_BRANCH \
     && git push -u origin $DEPLOY_BRANCH \
     && bundle exec cap $DEPLOY_TARGET deploy
     git checkout $MY_BRANCH
-fi
 
-
-cd ~/udesk/udesk_proj
-if [[ "$1" = 'init' ]]; then
-    set -x \
-    && git checkout -b $MY_BRANCH \
-    && git checkout -b $DEPLOY_BRANCH \
-    && for branch in $MERGE_BRANCHS ; do
-        echo "$DEPLOY_BRANCH merge $branch"
-        git checkout -b $branch
-        git checkout -b $DEPLOY_BRANCH
-        git merge $branch
-    done \
-    && git push -u origin $DEPLOY_BRANCH  \
-    && git checkout -b $MY_BRANCH
-    exit 0
-else
-    set -x \
-    && for branch in $MERGE_BRANCHS ; do
-        echo "$DEPLOY_BRANCH merge $branch"
-        git checkout -b $branch
-        git checkout -b $DEPLOY_BRANCH
-        git merge $branch
-    done \
-    && git checkout -B $DEPLOY_BRANCH \
-    && git merge $MY_BRANCH \
-    && git push -u origin $DEPLOY_BRANCH \
-    && bundle exec cap $DEPLOY_TARGET2 deploy
-    git checkout $MY_BRANCH
-fi
+#
+# cd $BASE_DIR/udesk_proj
+#     set -x \
+#     && checkout $MY_BRANCH \
+#     && checkout $DEPLOY_BRANCH \
+#     && git fetch \
+#     && for branch in $MERGE_BRANCHS ; do
+#         echo "$DEPLOY_BRANCH merge $branch"
+#         checkout $DEPLOY_BRANCH
+#         git merge origin/$branch
+#     done \
+#     && git checkout -B $DEPLOY_BRANCH \
+#     && git merge $MY_BRANCH \
+#     && git push -u origin $DEPLOY_BRANCH \
+#     && bundle exec cap $DEPLOY_TARGET2 deploy
+#     git checkout $MY_BRANCH
+#
