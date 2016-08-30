@@ -11,3 +11,12 @@ Usage:
    source ~/dotfiles/index 
 
 3. source ~/.bash_profile
+
+
+4. rubocop check
+rubocop
+rubocop --auto-gen-config
+https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+
+
+curl -Lo bin/rmate https://raw.githubusercontent.com/textmate/rmate/master/bin/rmate

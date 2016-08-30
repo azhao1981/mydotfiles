@@ -1,0 +1,16 @@
+#!/bin/bash
+
+reset_remote_branch(){
+  name=$1
+  cd ~/udesk/$name
+  echo "reset $name"
+  set -x \
+    && git fetch --all \
+    && git checkout develop && git reset --hard origin/develop \
+    && git checkout master && git reset --hard origin/master \
+    && git checkout week && git reset --hard origin/week
+}
+proj="udesk_proj"
+im="udesk_im"
+reset_remote_branch $proj
+reset_remote_branch $im
