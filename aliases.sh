@@ -1,12 +1,13 @@
 # export GOROOT=/srv/go
 export GOROOT=/usr/local/go
-export PATH=$GOROOT/bin:~/dotfiles/bin:/usr/local/sbin:$PATH
-export PATH=/usr/local/share/npm/bin:/usr/local/Cellar/node/6.2.0/bin:$PATH
 export GOPATH=/srv/gopath
+export GOBIN=$GOPATH/bin
+export PATH=$GOROOT/bin:$GOBIN:~/dotfiles/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/share/npm/bin:/usr/local/Cellar/node/6.2.0/bin:$PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 export M2_HOME=/srv/maven
 export PATH=$M2_HOME/bin:$PATH
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
 # node
 alias npm=cnpm
@@ -48,6 +49,8 @@ alias ureload='kill -USR2 `cat tmp/pids/unicorn.pid`'
 alias go="GOPATH=`pwd` go"
 
 #udesk
+alias webapp="cd ~/udesk/udesk_webapp_build"
+alias webst="cd ~/udesk/udesk_static"
 alias proj="cd ~/udesk/udesk_proj"
 alias udeskim="cd ~/udesk/udesk_im"
 alias ejabberd="cd ~/udesk/ejabberd"

@@ -3,11 +3,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/functions.sh
 source $DIR/aliases.sh
 source $DIR/bash_prompt.sh
-source $DIR/udesk.sh
+
 # suitup
 WORK_DIR=~/udesk
-source $WORK_DIR/suitup/script/suitup_bash.sh
-suitup-load $WORK_DIR/udesk_proj
-suitup-load $WORK_DIR/udesk_im
+# source $WORK_DIR/suitup/script/suitup_bash.sh
+# suitup-load $WORK_DIR/udesk_proj
+# suitup-load $WORK_DIR/udesk_im
 
 

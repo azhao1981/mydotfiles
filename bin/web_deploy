@@ -1,12 +1,13 @@
 #!/bin/bash
 
 
-branch = develop
-target = test_tryudesk
+branch=develop
+target=test_tryudesk
+
 cd ~/udesk/udesk_webapp_build
-git checkout -b $branch
-bundle exec  $target deploy
+git checkout  $branch
+bundle exec  cap $target deploy
 
 cd ~/udesk/udesk_static
-git checkout -b $branch
-bundle exec  $target deploy
+git checkout $branch
+bundle exec  cap $target deploy
