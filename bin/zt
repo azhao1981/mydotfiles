@@ -4,7 +4,8 @@
 # zeus test test/controllers/spa1/im/im_setting_controller_test.rb
 # zeus test test/controllers/spa1/customers_controller_test.rb -n test_获取客户详情_html
 # zeus test test/controllers/hc/comments_controller_test.rb -n test_create_with_unsafe_html
-# zeus test test/controllers/spa1/im_controller_test.rb -n test_hostory_open_session
+zeus test test/controllers/spa1/im_controller_test.rb -n test_agent_ask
+# zeus test test/controllers/spa1/im/im_group_districts_controller_test.rb # -n test_destroy
 # zeus test test/controllers/im_users_controller_test.rb -n test_WebTokenStatus
-zeus test test/controllers/spa1/im_sessions_controller_test.rb 
+# zeus test test/controllers/spa1/im_sessions_controller_test.rb 
 # zeus test  -n 

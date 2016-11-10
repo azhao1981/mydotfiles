@@ -4,15 +4,21 @@ export GOPATH=/srv/gopath
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOBIN:~/dotfiles/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/share/npm/bin:/usr/local/Cellar/node/6.2.0/bin:$PATH
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
-export M2_HOME=/srv/maven
-export PATH=$M2_HOME/bin:$PATH
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+# export M2_HOME=/usr/local/Cellar/maven/3.3.9
+# export PATH=$M2_HOME/bin:$PATH
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+# rbenv shell $(rbenv global)
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export  PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
 
 # node
 alias npm=cnpm
 alias note="atom ~/dev/my-notes"
-alias atomw="atom ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/udesk/work/ ~/dev/my-notes/ ~/udesk/udesk_ejabberd"
+alias atomw="atom ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/udesk/work/ ~/dev/my-notes/ ~/udesk/udesk_ejabberd ~/udesk/udesk_user_track"
 alias atomd="atom ~/~/dev/forjobs/forjobs ~/udesk/work ~/dev/my-notes"
 
 # PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
@@ -106,6 +112,8 @@ alias redisstop='sudo launchctl stop io.redis.redis-server'
 
 # python
 alias py='python'
+alias py2='pyenv activate 2.7'
+alias py3='pyenv activate 3.5'
 
 # rvm
 alias r21="rvm use 2.1"

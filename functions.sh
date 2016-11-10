@@ -34,12 +34,12 @@ rrun(){
   ./bin/rails runner $@
 }
 
-py2(){
-  source ~/.py2/bin/activate
-}
-py3(){
-  source ~/.py3/bin/activate
-}
+# py2(){
+#   source ~/.py2/bin/activate
+# }
+# py3(){
+#   source ~/.py3/bin/activate
+# }
 code () {
     if [[ $# = 0 ]]
     then
