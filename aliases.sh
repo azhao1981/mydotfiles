@@ -38,7 +38,7 @@ elasticsearch() { /usr/local/opt/elasticsearch/bin/elasticsearch $@
 
 #alias dockerclean="docker rm $(docker ps -aq)"
 
-# export GOROOT=/usr/local/Cellar/go/1.2
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -62,10 +62,10 @@ alias proj="cd ~/udesk/udesk_proj"
 alias udeskim="cd ~/udesk/udesk_im"
 alias ejabberd="cd ~/udesk/ejabberd"
 # sudo
-# redo prew command use sudo 
+# redo prew command use sudo
 alias sure="sudo !!"
 
-# linode 
+# linode
 alias linc='ssh -t weizhao@lish-tokyo.linode.com main'
 alias sock5='ssh lint -N -f &'
 alias sock6='ssh bjt -N -f &'
@@ -76,7 +76,7 @@ alias er="source ~/.bash_profile"   # reload bash profile
 alias eedit="mate ~/dotfiles && mate ~/dotfiles/aliases.sh"
 
 # source tree
-alias str='open -a SourceTree ' 
+alias str='open -a SourceTree '
 
 # sublime tools
 alias sp="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/"
@@ -93,8 +93,6 @@ alias sup="svn up "
 alias sst="svn st "
 alias sci="svn ci -m "
 alias sco="svn co "
-alias svnd="svn co "
-alias sadde="svn propset svn:executable on "
 alias sic="svn propset svn:ignore \"*\" ."
 alias si="svn propset svn:ignore "
 alias se="svn propedit svn:ignore ."
@@ -103,7 +101,6 @@ alias sinfo="svn info"
 alias sug="svn upgrade"
 alias surl="svn info | grep URL | awk {'print $2'}"
 alias svng="svn log --stop-on-copy "
-alias slog="svng -l 20|svn-slog"
 # do not work
 alias svnaddall="svn st | awk '{if ( $1 == \"?\") { print $2}}' | xargs svn add"
 
@@ -138,23 +135,11 @@ alias gps="git push"
 alias gpl="git pull"
 alias giturl="git remote show origin"
 alias gitl="git config --get remote.origin.url"
-# I allway make a mistake to type this 
+# I allway make a mistake to type this
 alias gti="git "
-alias gst='git status'
-
-
-# sysctl
-alias symsl="sysctl net.inet.tcp.msl"
-alias symslt="sudo sysctl -w net.inet.tcp.msl=1000"  #net.inet.tcp.msl: 15000 -> 1000
-alias symslr="sudo sysctl -w net.inet.tcp.msl=15000"  #net.inet.tcp.msl: 1000 -> 15000
-
-# rails 
-alias mg="rake db:migration"
-alias rt="touch tmp/restart.txt"
-alias tl="tail -f log/development.log"
-alias tlp="tail -f log/production.log"
 
 # Shortcuts
+
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dw="cd ~/work"
@@ -166,8 +151,7 @@ alias p="cd ~/Projects"
 alias odown="open ~/Downloads"
 alias g="git"
 alias h="history"
-alias pg='ps -ef| grep '
-# alias j="jobs"
+alias j="jobs"
 alias v="vim"
 alias ma="mate ."
 alias s="subl ."
@@ -199,6 +183,11 @@ alias r7d="cd /srv/go/src/github.com/azhao1981/route7"
 alias sshc='subl ~/.ssh/config'
 
 
+# current work
+alias proj="cd /srv/www/udesk_proj/current"
+alias udeskim="cd /srv/www/udesk_im/current"
+alias be="bundle exec "
+
 # admin command
 alias ng="netstat -na| grep "
 alias psg="ps aux | grep -v grep | grep "
@@ -221,7 +210,7 @@ alias lsd='ls -lF ${colorflag} | grep "^d"'
 
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mov=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
