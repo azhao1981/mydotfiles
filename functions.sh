@@ -134,7 +134,7 @@ if [ $? -eq 0 ]; then
     git diff --no-index --color-words "$@"
   }
   function rsave() {
-    git diff
+	git diff --color  | /usr/local/bin/diff-so-fancy
     git commit -a -m "$@"
     git push
   }

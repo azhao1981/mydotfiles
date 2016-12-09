@@ -1,0 +1,26 @@
+#!/bin/bash
+
+echo "nginx start"
+sudo nginx
+
+echo "es"
+bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
+cd ~/udesk/elasticSearch/elasticsearch-ik-docker
+./start_es.sh
+
+echo "tower "
+cd ~/udesk/udesk_tower
+node tower.js
+
+echo "rails proj"
+cd ~/udesk/udesk_proj
+# bundle exec rake db:migrate
+bundle exec unicorn_rails -c `pwd`/config/unicorn.conf.rb -D
+
+echo "rails im"
+cd ~/udesk/udesk_im
+# bundle exec rake db:migrate
+bundle exec unicorn_rails -c `pwd`/config/unicorn.conf.rb -D
+
+
+echo "SEE http://reocar.udesk.dev/hc"

@@ -57,6 +57,7 @@ alias go="GOPATH=`pwd` go"
 #udesk
 alias webapp="cd ~/udesk/udesk_webapp_build"
 alias webst="cd ~/udesk/udesk_static"
+alias vt="cd ~/udesk/udesk_vistor.go"
 alias proj="cd ~/udesk/udesk_proj"
 alias udeskim="cd ~/udesk/udesk_im"
 alias ejabberd="cd ~/udesk/ejabberd"
