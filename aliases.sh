@@ -184,8 +184,6 @@ alias sshc='subl ~/.ssh/config'
 
 
 # current work
-alias proj="cd /srv/www/udesk_proj/current"
-alias udeskim="cd /srv/www/udesk_im/current"
 alias be="bundle exec "
 
 # admin command
