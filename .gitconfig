@@ -1,9 +1,10 @@
 [user]
-	name = azhao1981
-	email = azhao.1981@gmail.com
+	name = 
+	email = 
 [core]
 	autocrlf =
 	quotepath = false
+	excludesfile = /Users/weizhao/.gitignore_global
 [alias]
 	st = status
 	ci = commit
@@ -17,4 +18,14 @@
 [color]
 	ui = true
 [push]
-	default = matching
+	default = current
+[https]
+	proxy = socks5://127.0.0.1:1080
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/weizhao/.stCommitMsg
