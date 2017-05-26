@@ -8,11 +8,7 @@ function parse_git_dirty() {
 #   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 # }
 function ruby_version() {
-  if [ -f "/home/webuser/.rbenv/version" ]; then
-    cat /home/webuser/.rbenv/version
-  else 
-    ""
-  fi
+  rbenv version 2> /dev/null | awk '{print $1}'
 }
 function parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)$(parse_git_dirty)/"
