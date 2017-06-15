@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "udej1"
+#
+ssh udhz-ej "grep  customer_13322374_13077 /srv/ejabberd-16.01/logs/message.log "
+echo "udej2"
+ssh udhz-ej2 "grep  customer_13322374_13077 /srv/ejabberd-16.01/logs/message.log "
+
+
+# scp udej:/srv/ejabberd-16.01/logs/message.log.2017-04-14.bz2 ./message.log.2017-04-14.bz2
+# bzip2 -d message.log.2017-04-14.bz2
+# mv message.log.2017-04-14 message.log.2017-04-14.ej1
+#
+# scp udej2:/srv/ejabberd-16.01/logs/message.log.2017-04-14.bz2 ./
+# bzip2 -d message.log.2017-04-14.bz2
+# mv message.log.2017-04-14 message.log.2017-04-14.ej2
+#
+#
+# grep  customer_48228241_5759 message.log.2017-04-14.ej1 >> customer_48228241_5759.txt
+# grep  customer_48228241_5759 message.log.2017-04-14.ej2 >> customer_48228241_5759.txt

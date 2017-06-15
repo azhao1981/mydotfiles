@@ -1,0 +1,16 @@
+#!/bin/bash
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+REPO="${PWD##*/}"
+
+if [[ -z $1 ]]; then
+  COMPARE_TO=""
+else
+  COMPARE_TO=$1
+fi
+
+
+URL="http://git.flyudesk.com/udesk/$REPO/blob/$(parse_git_branch)/$COMPARE_TO"
+echo $URL
+open $URL

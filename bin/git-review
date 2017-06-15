@@ -4,44 +4,31 @@
 ## git-review
 ##
 ## review code tools
-##
+## git review add branch_name
+## git review rm branch_name
+## git review [branch_name]
+function review_branches() {
+  git branch 2> /dev/null | grep review/ | sed -e "s/* \(.*\)/\1/" -e "s/review\///g"
+}
 
-# Windows needs more basic format (#8, git-for-windows/git#865)
-case $(uname -s) in
-  CYGWIN*|MINGW32*|MSYS*)
-    branch='%(refname:short)'
-    spacer=' '
+case $1 in
+  add )
+    branch_name=$2
+    git checkout origin/$branch_name -b review/$branch_name
+    ;;
+  rm )
+    branch_name=$2
+	git checkout master
+    git branch -D review/$branch_name
+	echo "git brach -D $branch_name"
     ;;
   *)
-    branch='%(color:yellow)%(refname:short)%(color:reset)'
-    spacer='%(color:black) %(color:reset)'
+    git fetch --all
+    for branch_name in $(review_branches); do
+        echo "update review/$branch_name"
+        git checkout review/$branch_name
+        git reset --hard origin/$branch_name
+    done  
+    git checkout master
     ;;
 esac
-
-format="\
-%(HEAD) \
-$branch|\
-%(color:bold red)%(objectname:short)%(color:reset) \
-%(color:bold green)(%(committerdate:relative))%(color:reset) \
-%(color:bold blue)%(authorname)%(color:reset) \
-%(color:yellow)%(upstream:track)%(color:reset)
-$spacer|\
-%(contents:subject)
-$spacer|"
-
-lessopts="--tabs=4 --quit-if-one-screen --RAW-CONTROL-CHARS --no-init"
-
-git for-each-ref \
-    --sort=-committerdate \
-    "refs/heads/"  \
-    --format="$format" \
-  | column -ts '|'  \
-  | less "$lessopts"
-
-# The above command:
-#   for all known branches,
-#   sort descending by last commit
-#   show local branches (change to "" to include both local + remote branches)
-#   apply the formatting template above
-#   break into columns
-#   use the pager only if there's not enough space

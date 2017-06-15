@@ -14,12 +14,13 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export  PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
-
+export EDITOR="subl -w"
 # node
 alias npm=cnpm
 alias note="atom ~/dev/my-notes"
 alias atomw="atom ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/udesk/work/ ~/dev/my-notes/ ~/udesk/udesk_ejabberd ~/udesk/udesk_user_track"
 alias atomd="atom ~/~/dev/forjobs/forjobs ~/udesk/work ~/dev/my-notes"
+alias cod="open -a \"Visual Studio Code\" " 
 
 # PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
 # alias lastp='echo "$LAST"'
@@ -59,6 +60,7 @@ alias webapp="cd ~/udesk/udesk_webapp_build"
 alias webst="cd ~/udesk/udesk_static"
 alias vt="cd ~/udesk/udesk_vistor.go"
 alias proj="cd ~/udesk/udesk_proj"
+alias dbcr="cd ~/dev/dbcr"
 alias udeskim="cd ~/udesk/udesk_im"
 alias ejabberd="cd ~/udesk/ejabberd"
 # sudo
@@ -179,6 +181,7 @@ alias ogjava="open -a firefox https://localhost:4850"
 alias chfs="cd /Users/azhao/work/huafei/statistic"
 alias hf="cd /Users/azhao/work/huafei"
 alias r7d="cd /srv/go/src/github.com/azhao1981/route7"
+
 # ssh config
 alias sshc='subl ~/.ssh/config'
 

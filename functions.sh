@@ -6,7 +6,10 @@ docker_env() {
   bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
 }
 es_start () {
-  sudo elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml  -XX:-UseSuperWord -Xmx50m -Xms10m -d
+  # sudo elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml  -XX:-UseSuperWord -Xmx50m -Xms10m -d
+  cd ~/udesk/elasticSearch
+  docker_env 
+  ~/udesk/elasticSearch/elasticsearch-ik-docker/start_es.sh
 }
 
 llp () {

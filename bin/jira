@@ -1,0 +1,6 @@
+#!/bin/bash
+# open a jira
+((!$#)) && echo 输入jira号 , command ignored! && exit 1
+url=http://jira.flyudesk.com/browse/$1
+echo "[JIRA]($url)"
+open $url

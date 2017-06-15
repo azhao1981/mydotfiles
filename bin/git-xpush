@@ -6,4 +6,5 @@ function parse_git_branch() {
 
 current=$(parse_git_branch)
 
+# git push -u flyudesk $current
 git push -u origin $current

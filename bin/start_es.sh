@@ -1,0 +1,1 @@
+/Users/weizhao/udesk/elasticSearch/elasticsearch-ik-docker/start_es.sh

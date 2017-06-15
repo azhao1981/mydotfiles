@@ -1,0 +1,32 @@
+#!/bin/bash
+
+name=$1
+date=$2
+tmp_file=$name_$date
+if [[ $3 = 'o' ]]; then
+	echo "origin log:"
+	ssh udhz-ej \
+		"cd /srv/ejabberd-16.01/logs/ && grep $name ejabberd.log* | grep $date " \
+		| awk '{split($1,a,":" ); print a[2]" "$2" "$6" "$9}' \
+			> /tmp/$tmp_file
+
+	ssh udhz-ej2 \
+		"cd /srv/ejabberd-16.01/logs/ && grep $name ejabberd.log* | grep $date " \
+		| awk '{split($1,a,":" );  print a[2]" "$2" "$6" "$9}' \
+			>> /tmp/$tmp_file
+
+	cat /tmp/$tmp_file | sort -k 1,2
+	exit 0 
+fi
+echo "ej"
+ssh udhz-ej \
+	"cd /srv/ejabberd-16.01/logs/ && grep $name ejabberd.log* | grep $date " \
+	| awk '{split($1,a,":" ); split($9,b,"/" );  print a[2]" "$2" "$6" "b[2]}' \
+		> /tmp/$tmp_file
+echo "ej2"
+ssh udhz-ej2 \
+	"cd /srv/ejabberd-16.01/logs/ && grep $name ejabberd.log* | grep $date " \
+	| awk '{split($1,a,":" ); split($9,b,"/" );  print a[2]" "$2" "$6" "b[2]}' \
+		>> /tmp/$tmp_file
+
+cat /tmp/$tmp_file | sort -k 1,2

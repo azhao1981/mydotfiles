@@ -2,7 +2,7 @@
 	name = azhao1981
 	email = azhao.1981@gmail.com
 [core]
-	excludesfile = /Users/azhao/.gitignore_global
+	excludesfile = /Users/weizhao/.gitignore_global
 	autocrlf = 
 	quotepath = false
 [difftool "sourcetree"]
@@ -41,9 +41,9 @@
 [credential]
 	helper = osxkeychain
 [http]
-  proxy = socks5://127.0.0.1:1080
+#  proxy = socks5://127.0.0.1:1080
 [https]
-  proxy = socks5://127.0.0.1:1080
+#   proxy = socks5://127.0.0.1:1080
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f

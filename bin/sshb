@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for i in `seq 1 30`  
+do  
+	server="udhz-p$i"
+    echo $server
+	# ssh $server "ps -ef| grep  sidekiq | grep udesk_proj" | grep -v grep
+	ssh $server "grep 12345679 /srv/www/udesk_proj/current/log/production.log"
+	# ssh $server "grep 'udesk_716msg1494216130334' /srv/www/udesk_proj/current/log/production.log"
+	# ssh $server "grep '13478878' /srv/www/udesk_proj/current/log/production.log-20170523 | grep 'new session'"
+	# ssh $server "ps aux | grep zombie | grep -v grep"
+done 
+ 

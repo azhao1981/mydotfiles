@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+ejlog agent_36960 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_36954 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_38176 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_36989 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_36960 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_36954 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_33544 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_38176 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_41665 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_41664 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_42190 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_28136 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_42191 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_28136 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_33543 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_41532 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_42803 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_41661 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_35402 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_31568 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_36960 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_31566 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_36954 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_42801 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_41144 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_38176 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_40284 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_41142 2017-03-13 o | grep 12:0 >> a.txt
+ejlog agent_43720 2017-03-13 o | grep 12:0 >> a.txt

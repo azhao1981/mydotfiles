@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ps -ef | grep ssh | grep "\-C \-f \-N \-g" | awk '{print $2}' | xargs kill -9
+
+ssh udhz-debugdb -C -f -N -g 
+ssh udhz-bi1db -C -f -N -g
+ssh udhz-mongodb -C -f -N -g

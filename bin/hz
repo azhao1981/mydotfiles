@@ -1,0 +1,6 @@
+#!/bin/bash
+((!$#)) && echo 请指定udesk杭州机器名 , command ignored! && exit 1
+
+HostName="udhz-$1"
+echo "Connecting to $HostName"
+ssh $HostName
