@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ssh ud-jenkins -C " tar czvf /tmp/coverage.tar.gz /home/webuser/.jenkins/workspace/udeskProj_TDD_afterRebase/coverage"
+
+scp ud-jenkins:/tmp/coverage.tar.gz /tmp/
+cd /tmp
+rm -rf /tmp/home/webuser/.jenkins/workspace/udeskProj_TDD_afterRebase/coverage
+tar zxvf coverage.tar.gz
+open home/webuser/.jenkins/workspace/udeskProj_TDD_afterRebase/coverage/index.html

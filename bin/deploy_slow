@@ -1,0 +1,5 @@
+#!/bin/bash
+((!$#)) && echo 请指定部署机器名 , command ignored! && exit 1
+
+cd ~/udesk/udesk_proj_sidekiq/cap_slow
+bundle exec cap $1 deploy

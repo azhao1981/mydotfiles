@@ -3,7 +3,9 @@
 reset_remote_branch(){
   name=$1
   cd ~/udesk/$name
-  echo "reset $name"
+  
+  echo -e "\033[0;32mreset $name"
+
   set -x \
     && git fetch --all \
     && git checkout develop && git reset --hard origin/develop \
@@ -12,5 +14,18 @@ reset_remote_branch(){
 }
 proj="udesk_proj"
 im="udesk_im"
-reset_remote_branch $proj
-reset_remote_branch $im
+
+if [[ "$1" = "" ]]; then
+	reset_remote_branch $proj
+	reset_remote_branch $im
+	exit
+fi
+if [[ "$1" = "front" ]]; then
+	reset_remote_branch udesk_im_client
+	reset_remote_branch udesk_webapp
+	reset_remote_branch udesk_webapp_build
+	exit
+fi
+
+
+reset_remote_branch $1

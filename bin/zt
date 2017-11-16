@@ -17,10 +17,13 @@
 # zeus test test/controllers/spa1/im/im_group_districts_controller_test.rb # -n test_create
 # zeus test test/integration/weixin_apis_test.rb -n test_token_not_refresh
 # zeus test test/api/v2/im_session_api_test.rb
-zeus test test/integration/pre_sessions_test.rb
+# zeus test test/integration/pre_sessions_test.rb
 # zeus test test/integration/spa1/im_customer_test.rb
 # zeus test test/controllers/internal/notice_agent_controller_test.rb
 # zeus test test/controllers/spa1/im/im_robots_controller_test.rb -n create_blank
 # zeus test test/controllers/spa1/im_logs_controller_test.rb -n test_im_client_logs
 # zeus test test/controllers/spa1/im_web_plugins_controller_test.rb -n test_out_config_error_appoint_wrong_id
 # zeus test test/controllers/spa1/im/ichat_controller_test.rb
+# zeus test test/integration/im_session_key_test.rb
+zeus test test/integration/ichat_test.rb
+# zeus test test/controllers/spa1/im_web_plugins_controller_test.rb -n test_out_config_im_customize

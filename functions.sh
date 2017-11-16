@@ -23,6 +23,26 @@ kp () {
 }
 
 
+pzt(){
+  OPTS=""
+  if [ $# = 2 ]; then
+    # OPTS="TESTOPTS=\"--name=test_$2\""
+	OPTS="-n test_$2"
+  fi
+  echo "zeus test $1 $OPTS"
+  zeus test $1 $OPTS
+}
+
+rt(){
+  OPTS=""
+  if [ $# = 2 ]; then
+    # OPTS="TESTOPTS=\"--name=test_$2\""
+	OPTS="-n test_$2"
+  fi
+  echo "./bin/rails test $1 $OPTS"
+  ./bin/rails test $1 $OPTS
+}
+
 rtest(){
   OPTS=""
   if [ $# = 2 ]; then

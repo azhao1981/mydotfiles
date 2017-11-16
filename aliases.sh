@@ -4,6 +4,7 @@ export GOPATH=/srv/gopath
 export GOBIN=$GOPATH/bin
 export PATH=$GOROOT/bin:$GOBIN:~/dotfiles/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/share/npm/bin:/usr/local/Cellar/node/6.2.0/bin:$PATH
+export ROOT_PATH=~/udesk/
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 # export M2_HOME=/usr/local/Cellar/maven/3.3.9
 # export PATH=$M2_HOME/bin:$PATH

@@ -5,9 +5,10 @@ do
 	server="udhz-p$i"
     echo $server
 	# ssh $server "ps -ef| grep  sidekiq | grep udesk_proj" | grep -v grep
-	ssh $server "grep 12345679 /srv/www/udesk_proj/current/log/production.log"
-	# ssh $server "grep 'udesk_716msg1494216130334' /srv/www/udesk_proj/current/log/production.log"
+	# ssh $server "grep 未知错误 /srv/www/udesk_proj/current/log/production.log | grep rd-dota.udesk.cn"
+	ssh $server "grep '64355895' /srv/www/udesk_proj/current/log/production.log | grep has_survey"
 	# ssh $server "grep '13478878' /srv/www/udesk_proj/current/log/production.log-20170523 | grep 'new session'"
 	# ssh $server "ps aux | grep zombie | grep -v grep"
+	# ssh $server "grep '/spa1/init_data ' /srv/www/udesk_proj/current/log/nginx.access.log | grep -v 'udesk.cn' | grep -v 'udeska2.com'"
 done 
  

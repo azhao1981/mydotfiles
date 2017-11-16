@@ -12,6 +12,7 @@ set -x \
   && git fetch --all \
   && git checkout develop && git reset --hard origin/develop \
   && git checkout master && git reset --hard origin/master \
+  && git checkout week && git reset --hard origin/week \
   && git checkout $current && git rebase origin/$rebase \
   && git push -f -u origin $current
 
