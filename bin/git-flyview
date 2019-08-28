@@ -1,16 +1,19 @@
 #!/bin/bash
-function parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
-}
+
+source "`dirname $0`/git.base.sh"
+
 REPO="${PWD##*/}"
 
+if [[ $REPO = "udesk_vistor.go" ]]; then
+	REPO="udesk_vistor_go"
+fi
+
 if [[ -z $1 ]]; then
-  COMPARE_TO=""
+  COMPARE_TO=master
 else
   COMPARE_TO=$1
 fi
 
-
-URL="http://git.flyudesk.com/udesk/$REPO/blob/$(parse_git_branch)/$COMPARE_TO"
+URL="http://git.flyudesk.com/udesk/$REPO/compare/$COMPARE_TO...$(git_current_branch)"
 echo $URL
 open $URL

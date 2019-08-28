@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+# mac gsed
+EXEC=gsed
+
+# try
+# $EXEC -e 's/encoding_aes_key: "http:\/\/www.udeskt1.com\/weixin_components"/encoding_aes_key: "h1h2s895fhsrl03grt7h42sr456jncvg5467gvbqlm9"/g' test.t1_101.201.110.250_property.yml
+
+$EXEC -i 's/encoding_aes_key: "http:\/\/www.udeskt1.com\/weixin_components"/encoding_aes_key: "h1h2s895fhsrl03grt7h42sr456jncvg5467gvbqlm9"/g' *.yml

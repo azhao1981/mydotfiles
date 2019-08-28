@@ -1,21 +1,5 @@
 #!/bin/bash
 
 FROM=$1
-# function parse_git_branch() {
-#   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
-# }
-# echo "git rev-list --boundary $(parse_git_branch)...$FROM"
-#
-# function git_from_commit() {
-# 	git rev-list --boundary $(parse_git_branch)...$FROM | grep "^-" | cut -c2-
-# }
-#
-#
-#
-#
-# if [[ $2 == "-b" ]]; then
-# 	FROM=$(git_from_commit)
-# fi
-#
-# echo "git diff $FROM"
+
 git diff --color  $FROM | /usr/local/bin/diff-so-fancy | grep -E 'Date|added|deleted|modified'

@@ -8,9 +8,21 @@ function parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1)$(parse_git_dirty)/"
 }
 function ruby_version() {
-  # cat ~/.rbenv/version 2> /dev/null
-  rbenv version | awk '{print $1}'
+  rbenv version | awk '/set/ {print "Ru|"$1" "}'
 }
+
+function go_version() {
+	goenv version | awk '{print "Go|"$1" "}'
+}
+
+function py_version() {
+	pyenv version | awk '{print "Py|"$1" "}'
+}
+
+function t_version() {
+	echo "$(ruby_version)$(go_version)$(py_version)"
+}
+
 c_1="\[\e[0m\]"
 c0="\[\e[30m\]"
 c1="\[\e[31m\033[1m\]"
@@ -21,10 +33,6 @@ c5="\[\e[35m\]"
 c6="\[\e[36m\]"
 c7="\[\e[37m\]"
 
-PS1="$c1\u@\h $c2\w $c3\$(ruby_version) $c1\$(parse_git_branch)\n$c_1$ "
+PS1="$c1\u@\h $c2\w $c3\$(t_version) $c1\$(parse_git_branch)\n$c_1$ "
 
-# BASE16_SHELL=$HOME/.config/base16-shell/
-# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
-# PS1="$c1 \u: $c2\w $c3(\$(ruby_version)) $c1\$(parse_git_branch) \n$c_1~ "
 

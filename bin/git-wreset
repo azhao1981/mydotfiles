@@ -3,20 +3,21 @@
 reset_remote_branch(){
   name=$1
   cd ~/udesk/$name
-  
-  echo -e "\033[0;32mreset $name"
 
   set -x \
     && git fetch --all \
     && git checkout develop && git reset --hard origin/develop \
     && git checkout master && git reset --hard origin/master \
+	&& git checkout master && git reset --hard origin/sh_master \
     && git checkout week && git reset --hard origin/week
 }
 proj="udesk_proj"
+db="udesk_proj_db"
 im="udesk_im"
 
 if [[ "$1" = "" ]]; then
 	reset_remote_branch $proj
+	reset_remote_branch $db
 	reset_remote_branch $im
 	exit
 fi

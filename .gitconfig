@@ -1,6 +1,6 @@
 [user]
-	name = azhao1981
-	email = azhao.1981@gmail.com
+	name = weiz
+	email = weiz@udesk.cn
 [core]
 	excludesfile = /Users/weizhao/.gitignore_global
 	autocrlf = 
@@ -14,26 +14,26 @@
 [alias]
 	st = status -s 
 	ci = commit -v 
-  cia = commit -v -a -m 
+  	cia = commit -v -a -m 
 	br = branch 
 	df = diff 
-  cl = clone 
-	ff = merge --ff-only origin/`git name-rev --name-only HEAD`
+  	cl = clone 
+	mff = merge --ff-only 
 	di = diff -w -M 
-  reh = reset --hard 
-  co = checkout 
-  cp = cherry-pick 
-  l = log 
-  ll = log -p 
-  lod = log --oneline --decorate 
-  lgraph = log --oneline --decorate --graph 
-  pullit = pull --rebase 
-  ads = submodule add 
-  rem = remote add origin 
-  headless = !sh -c 'git symbolic-ref HEAD refs/heads/$0 && rm .git/index && git clean -fdx'
-  unstash = stash branch
-  untrack = update-index --assume-unchanged 
-  retrack = update-index --no-assume-unchanged 
+	reh = reset --hard 
+	co = checkout 
+	cp = cherry-pick 
+	l = log 
+	ll = log -p 
+	lod = log --oneline --decorate 
+	lgraph = log --oneline --decorate --graph 
+	pullit = pull --rebase 
+	ads = submodule add 
+	rem = remote add origin 
+	headless = !sh -c 'git symbolic-ref HEAD refs/heads/$0 && rm .git/index && git clean -fdx'
+	unstash = stash branch
+	untrack = update-index --assume-unchanged 
+	retrack = update-index --no-assume-unchanged 
 [color]
 	ui = true
 [push]

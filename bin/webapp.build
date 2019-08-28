@@ -4,10 +4,11 @@ if [ -z "${ROOT_PATH}" ]; then
 	ROOT_PATH=~/udesk/
 fi
 echo "development" > "${ROOT_PATH}udesk_webapp_build/.env"
+
+# ember --max_old_space_size=4096 build --output-path "${ROOT_PATH}udesk_webapp_build/dist"
 ember build --output-path "${ROOT_PATH}udesk_webapp_build/dist"
 
 printf '\e[%s;%s;%sm %1s\n\n' 5 31 40 '--------jshint start---------'
 jshint ./app/ | grep 'Duplicate\|is not defined'
 printf '\e[%s;%s;%sm %1s\n\n\n' 5 31 40 '--------jshint end---------'
 
-  

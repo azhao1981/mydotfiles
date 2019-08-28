@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source "`dirname $0`/git.base.sh"
+
+git fetch origin $(git_current_branch)
+git reset --hard origin/$(git_current_branch)

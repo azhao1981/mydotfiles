@@ -1,0 +1,47 @@
+#!/bin/bash
+
+FROM=$1
+
+
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+}
+
+echo "git rev-list --boundary $(parse_git_branch)...$FROM"
+
+function git_from_commit() {
+	git rev-list --boundary $(parse_git_branch)...$FROM | grep "^-" | cut -c2-
+}
+
+current_branch=$(parse_git_branch)
+parent_branch=$(git_from_commit)
+
+git log --pretty=format:"%h - %an, %ar : %s" -2 $parent_branch
+git log -2 $parent_branch
+
+
+if [ "$2" = '' ]; then
+	echo "不打包,退出"
+	exit 0
+fi
+
+bak_branch=zbak/$(parse_git_branch)
+echo "备份 $bak_branch"
+
+git branch -D $bak_branch
+git checkout -b $bak_branch
+git checkout $current_branch
+
+git reset $parent_branch
+git add .
+git commit -m "$2"
+#
+#
+#
+#
+# if [[ $2 == "-b" ]]; then
+# 	FROM=$(git_from_commit)
+# fi
+#
+# echo "git diff $FROM"
+# git diff --color  $FROM | /usr/local/bin/diff-so-fancy | grep -E 'Date|added|deleted|modified'

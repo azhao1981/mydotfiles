@@ -2,6 +2,15 @@ deploy() {
   bundle exec cap $1 deploy
 }
 
+xbrew() {
+	HOMEBREW_NO_AUTO_UPDATE=true brew $@ -vvv
+}
+
+ssht() {
+set -x \
+  & ssh $1 -C -f -N -g &
+}
+
 docker_env() {
   bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh'
 }
@@ -52,9 +61,26 @@ rtest(){
   ./bin/rake test $1 $OPTS
 }
 
+rtest5(){
+  OPTS=""
+  if [ $# = 2 ]; then
+    OPTS="TESTOPTS=\"--name=test_$2\""
+  fi
+  echo "./bin/rails test $1 $OPTS"
+  ./bin/rails test $1 $OPTS
+}
+
 rrun(){
   echo "./bin/rails runner $@"
   ./bin/rails runner $@
+}
+
+udesk(){
+	if [[ $# = 0 ]]; then
+		cd ~/udesk
+	else
+		cd ~/udesk/udesk_$1		
+	fi
 }
 
 # py2(){

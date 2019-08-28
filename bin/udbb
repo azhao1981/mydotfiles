@@ -1,0 +1,6 @@
+#!/bin/bash
+((!$#)) && echo 请指定udesk机器名 , command ignored! && exit 1
+
+HostName="udbb-$1"
+echo "Connecting to $HostName"
+ssh $HostName

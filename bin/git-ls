@@ -1,0 +1,11 @@
+#!/bin/bash
+
+LOG_LINE=$1 
+if [ "$1" = '' ]; then
+	LOG_LINE=20
+fi
+
+LOG_INFO=HEAD~$LOG_LINE..HEAD
+
+echo "git log $LOG_INFO --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an, %cr)' --abbrev-commit"
+git log $LOG_INFO --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an, %cr)' --abbrev-commit

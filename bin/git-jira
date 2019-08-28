@@ -1,0 +1,17 @@
+#!/bin/bash
+source "`dirname $0`/git.base.sh"
+
+if [[ -z $1 ]]; then
+  GIT_JIRA_ID=$(git_current_branch)
+else
+  GIT_JIRA_ID=$1
+fi
+
+JIRA_ID=`echo $GIT_JIRA_ID \
+	| sed -e 's/im_/IM-/' \
+	| sed -e 's/ts_/TS-/' \
+	| awk '{split($1,a,"_" ); print a[2]}'`	
+
+echo $JIRA_ID
+
+open "http://jira.flyudesk.com/browse/$JIRA_ID"

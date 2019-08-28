@@ -1,0 +1,27 @@
+#!/bin/bash
+cd ~/udesk/unitest
+
+rm -rf ./coverage coverage.tar.gz
+
+# cd /home/webuser/.jenkins/workspace/udeskProj_newCommit_week_autoTest
+# cd /home/webuser/.jenkins/workspace/udeskProj_newCommit_develop_autoTest
+ssh ud-ci << 'ENDSSH'
+cd /home/webuser/.jenkins/workspace/udeskProj_newCommit_week_autoTest
+tar czvf /tmp/coverage.tar.gz coverage
+ENDSSH
+
+scp ud-ci:/tmp/coverage.tar.gz ./
+tar zxvf coverage.tar.gz
+
+ssh ud-ci << 'ENDSSH'
+cd /tmp
+rm -f  /tmp/coverage.tar.gz
+ENDSSH
+
+
+# udeskProj_develop_daily_autoTset
+# udeskProj_newCommit_develop_autoTest
+# udeskProj_newCommit_week_autoTest
+# udeskProj_TDD_afterRebase
+# udeskProj_week_daily_autoTset
+# udeskIm_week_daily_autoTset

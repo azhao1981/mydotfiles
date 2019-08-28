@@ -1,27 +1,59 @@
 # export GOROOT=/srv/go
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go
 export GOPATH=/srv/gopath
 export GOBIN=$GOPATH/bin
-export PATH=$GOROOT/bin:$GOBIN:~/dotfiles/bin:/usr/local/sbin:$PATH
+# export CDPATH=$CDPATH:~/udesk:~/dev:$GOPATH/src
+export PATH="/Users/weizhao/.deno/bin:$PATH"
+eval "$(goenv init -)"
+
+# PG
+export PG_DATABASE_URL=postgres://admin:password123456@localhost
+
+export PATH=$GOROOT/bin:$GOBIN:~/dotfiles/bin:/usr/local/sbin:~/dev/shell-functools/ft:$PATH
 export PATH=/usr/local/share/npm/bin:/usr/local/Cellar/node/6.2.0/bin:$PATH
 export ROOT_PATH=~/udesk/
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
 # export M2_HOME=/usr/local/Cellar/maven/3.3.9
 # export PATH=$M2_HOME/bin:$PATH
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
 # rbenv shell $(rbenv global)
+
+# openssl
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+# flutter
+export ANDROID_HOME="/Users/weizhao/Library/Android/sdk"
+export FLUTTER_HOME="/Users/weizhao/dev/flutter/flutter"
+export PATH=${FLUTTER_HOME}/bin:$PATH
+export PATH=~/.dart-sdk/current/bin:$PATH
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-toolsri
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+## pub
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export  PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
+export PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
 export EDITOR="subl -w"
+
 # node
-alias npm=cnpm
+export NVM_DIR="/Users/weizhao/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+# alias npm=cnpm
+
+# work dir
 alias note="atom ~/dev/my-notes"
-alias atomw="atom ~/udesk/udesk_proj/ ~/udesk/udesk_im/ ~/udesk/work/ ~/dev/my-notes/ ~/udesk/udesk_ejabberd ~/udesk/udesk_user_track"
-alias atomd="atom ~/~/dev/forjobs/forjobs ~/udesk/work ~/dev/my-notes"
 alias cod="open -a \"Visual Studio Code\" " 
+alias git2='/usr/local/bin/git -c protocol.version=2'
 
 # PROMPT_COMMAND='LAST="`cat /tmp/x`"; exec >/dev/tty; exec > >(tee /tmp/x)'
 # alias lastp='echo "$LAST"'
@@ -54,7 +86,7 @@ alias sshtunnel="ssh -p 60022 weizhao@101.200.204.62"
 # unicore
 alias ureload='kill -USR2 `cat tmp/pids/unicorn.pid`'
 # goc go in current dir
-alias go="GOPATH=`pwd` go"
+# alias go="GOPATH=`pwd` go"
 
 #udesk
 alias webapp="cd ~/udesk/udesk_webapp_build"
@@ -63,6 +95,12 @@ alias vt="cd ~/udesk/udesk_vistor.go"
 alias proj="cd ~/udesk/udesk_proj"
 alias dbcr="cd ~/dev/dbcr"
 alias udeskim="cd ~/udesk/udesk_im"
+alias udim="cd ~/udesk/udesk_im"
+alias client_build="cd ~/udesk/udesk_im_client_build"
+alias udclient="cd ~/udesk/udesk_im_client"
+alias udwebapp="cd ~/udesk/udesk_webapp"
+alias webapp_build="cd ~/udesk/udesk_webapp_build"
+alias udtower="cd ~/udesk/udesk_tower"
 alias ejabberd="cd ~/udesk/ejabberd"
 # sudo
 # redo prew command use sudo
@@ -72,7 +110,7 @@ alias sure="sudo !!"
 alias linc='ssh -t weizhao@lish-tokyo.linode.com main'
 alias sock5='ssh lint -N -f &'
 alias sock6='ssh bjt -N -f &'
-alias ssha='ssh-add ~/.ssh/id_rsa'
+alias ssha='ssh-add ~/.ssh/id_rsa ; ssh-add ~/.ssh/udesk_hz.key'
 
 # Manage dotfiles
 alias er="source ~/.bash_profile"   # reload bash profile
@@ -142,7 +180,6 @@ alias gitl="git config --get remote.origin.url"
 alias gti="git "
 
 # Shortcuts
-
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias dw="cd ~/work"
@@ -155,36 +192,18 @@ alias odown="open ~/Downloads"
 alias g="git"
 alias h="history"
 alias j="jobs"
-alias v="vim"
+
 alias ma="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
-alias movie="cd /Users/azhao/work/movie"
-alias mbj="cd /Users/azhao/work/movie/bja2"
-alias mbjv="cd /Users/azhao/work/movie/bjv1"
-alias mtrunk="cd /Users/azhao/work/movie/trunk"
-alias tdc="cd /Users/azhao/work/movie/bja2/ticket_data_center"
-alias ttdc="cd /Users/azhao/work/movie/trunk/ticket_data_center"
 alias tailf="tail -f "
 # ruby 
 alias me='magic_encoding'
 
-# current work 
-alias toc="cd /srv/rorapps/toc"
-alias fgcc="cd /srv/rorapps/fgcc"
-alias be="bundle exec "
-alias ot="open http://toc.dev"
-alias rmovie="cd /srv/rorapps/rmovie"
-alias or="open http://rmovie.dev"
-# open glass on localhost
-alias ogjava="open -a firefox https://localhost:4850"
-alias chfs="cd /Users/azhao/work/huafei/statistic"
-alias hf="cd /Users/azhao/work/huafei"
-alias r7d="cd /srv/go/src/github.com/azhao1981/route7"
-
 # ssh config
-alias sshc='subl ~/.ssh/config'
+alias sshc='subl -W ~/.ssh/'
+alias sshcc='cat ~/.ssh//conf.d/*.conf > ~/.ssh/config'
 
 
 # current work

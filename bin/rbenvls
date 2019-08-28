@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "~/.rbenv/plugins/ruby-build/share/ruby-build/"
+ls -l ~/.rbenv/plugins/ruby-build/share/ruby-build/| \
+	awk '{print $9}' | \
+		grep -v rbx | \
+		grep -v mruby | \
+		grep -v jruby | \
+		grep -v maglev | \
+		grep -v ree | \
+		grep -v truff | \
+		grep "2\.[56]"

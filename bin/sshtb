@@ -1,0 +1,17 @@
+#!/bin/bash
+
+servers=(
+ud-try 
+ud-t1 
+ud-t2 
+ud-t3
+ud-tim
+)
+
+for i in ${servers[@]}
+do  
+	server="$i"
+    echo $server
+	# ssh $server "ps -ef| grep  sidekiq | grep udesk_proj" | grep -v grep
+done 
+ 

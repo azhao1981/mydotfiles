@@ -1,14 +1,24 @@
 #!/bin/bash
 
-for i in `seq 1 30`  
+for i in `seq 1 70`  
 do  
 	server="udhz-p$i"
     echo $server
 	# ssh $server "ps -ef| grep  sidekiq | grep udesk_proj" | grep -v grep
 	# ssh $server "grep 未知错误 /srv/www/udesk_proj/current/log/production.log | grep rd-dota.udesk.cn"
-	ssh $server "grep '64355895' /srv/www/udesk_proj/current/log/production.log | grep has_survey"
+	# ssh $server "grep '30070790' /srv/www/udesk_im/current/log/production.log | grep 'new session'"
 	# ssh $server "grep '13478878' /srv/www/udesk_proj/current/log/production.log-20170523 | grep 'new session'"
 	# ssh $server "ps aux | grep zombie | grep -v grep"
 	# ssh $server "grep '/spa1/init_data ' /srv/www/udesk_proj/current/log/nginx.access.log | grep -v 'udesk.cn' | grep -v 'udeska2.com'"
+	# ssh $server "ps aux| grep nginx"
+	# ssh $server "tail /srv/www/udesk_proj/revisions.log -n 1"
+	# ssh $server "tail /srv/www/udesk_im/revisions.log -n 1"
+	# ssh $server "tail /srv/www/udesk_proj/revisions.log -n 1"
+	# ssh $server "grep starbuckschinapcc  /srv/www/udesk_proj/shared/log/udesk_mailer.log" >> udesk_mailer.log
+	# ssh $server "grep 116440857 /srv/www/udesk_proj/current/log/production.log-20180111 | grep spa1/im/close"
+	# ssh $server "grep elasticsearch_url /srv/www/udesk_proj/current/config/property.yml -A 8"
+	# ssh $server "grep elasticsearch_url /srv/www/udesk_im/current/config/property.yml -A 1"
+	ssh $server "ps aux | grep udesk_im| grep -v grep"
+	# ssh $server "tail /srv/www/udesk_proj/current/log/production.log -n20000 | grep 91899302| grep 'new session'"
 done 
  

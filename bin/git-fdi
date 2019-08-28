@@ -1,2 +1,2 @@
 #!/bin/bash
-git diff --color  $1 | /usr/local/bin/diff-so-fancy
+git diff --color  $@ | /usr/local/bin/diff-so-fancy

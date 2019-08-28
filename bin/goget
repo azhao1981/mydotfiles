@@ -1,0 +1,9 @@
+#!/bin/bash
+((!$#)) && echo 请指定下载包 goget sys , command ignored! && exit 1
+cd $GOPATH/src/github.com/golang
+
+echo "go get github.com/golang/$1"
+
+go get github.com/golang/$1
+
+# git clone https://github.com/golang/$1.git

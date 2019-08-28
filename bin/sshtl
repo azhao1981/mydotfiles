@@ -3,6 +3,13 @@
 ps -ef | grep ssh | grep "\-C \-f \-N \-g" | awk '{print $2}' | xargs kill -9
 
 ssh udhz-debugdb -C -f -N -g 
+ssh udhz-imlogdb -C -f -N -g
+
 ssh udhz-bi1db -C -f -N -g
+# ssh udhz-kmdb -C -f -N -g
 ssh udhz-mongodb -C -f -N -g
 ssh udhz-sentrydb -C -f -N -g
+
+ssh ud-es6-tunnel -C -f -N -g
+
+# autossh ud-mgot -C -f -N -g

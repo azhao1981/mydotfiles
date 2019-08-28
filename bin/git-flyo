@@ -10,4 +10,4 @@ else
   COMPARE_TO=$1
 fi	
 	
-open "http://git.flyudesk.com/udesk/udesk_proj/blob/$(parse_git_branch)/$1"
+open "http://git.flyudesk.com/udesk/$REPO/blob/$(parse_git_branch)/$1"
